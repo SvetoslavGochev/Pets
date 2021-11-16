@@ -1,13 +1,23 @@
 
+import { Route , Routes} from 'react-router-dom';
 import './App.css';
 import Header  from './componentss/Header/Header';
 import Footer from './componentss/Footer/Footer'
-import style from './componentss/Header/Header.css'
+import style from './componentss/Header/Header.css';
+
+import Categories  from './componentss/Categories/Categories';
+
+//switch kato machne edin rout i da spre
 function App() {
   return (
     <div className="container">
-     <h1>Hello Word</h1>
      <Header />
+     
+    <Routes>
+
+       <Route path="/" element={<Categories />}/>
+    </Routes>
+    
 
      <Footer />
     </div>
