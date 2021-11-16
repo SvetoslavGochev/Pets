@@ -1,6 +1,7 @@
 import CategoryNavigation from './CategoryNavigation/CategoriNavigation'
 
 // import { useLocation, useMatch } from 'react-router-dom';
+import { Redirect, useHistory, Switch, Route }  from 'react-router-dom';
 
 const Categories = ({
     match,

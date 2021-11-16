@@ -15,10 +15,11 @@ function App() {
      
     <Routes>
 
-       <Route  path="/" element={<Categories />}/>
+       <Route exact path="/" element={<Categories />}/>
+        
        {/* route podava propss match location history */}
-       <Route path="/categories/*" element={<Categories />} />
-    </Routes>
+      
+       </Routes>
     
 
      <Footer />
