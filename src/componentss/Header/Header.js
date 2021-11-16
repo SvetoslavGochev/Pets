@@ -10,7 +10,7 @@ const Header = () => {
             </div>
             <div class="second-bar">
                 <ul>
-                    <li>Welcome, {{username}}!</li>
+                    <li>Welcome, Pesho!</li>
                     <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 </ul>
             </div>
@@ -22,6 +22,7 @@ const Header = () => {
             </ul>
         </section>
     </nav>
+
 </header>
 }
 

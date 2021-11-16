@@ -1,5 +1,5 @@
 const Footer = () => {
-        <footer id="side-footer">
+     return   <footer id="side-footer">
             <p>@PetMyPet</p>
         </footer>
 }
