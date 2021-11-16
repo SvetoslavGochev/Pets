@@ -15,7 +15,9 @@ function App() {
      
     <Routes>
 
-       <Route path="/" element={<Categories />}/>
+       <Route  path="/" element={<Categories />}/>
+       {/* route podava propss match location history */}
+       <Route path="/categories/*" element={<Categories />} />
     </Routes>
     
 

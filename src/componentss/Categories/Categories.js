@@ -1,14 +1,23 @@
 import CategoryNavigation from './CategoryNavigation/CategoriNavigation'
 
+// import { useLocation, useMatch } from 'react-router-dom';
 
-
-const Categories = () => {
+const Categories = ({
+    match,
+    location,
+    history
+}) => {
+    console.log(match);
+    console.log(location);
+    console.log(history);
+    console.log("dasdasasasasasasasasasasasas")
+    //dava ni path i url
     return(
         <section className="dashboard">
         <h1>Dashboard</h1>
 
         <CategoryNavigation />
-        
+
         <ul className="other-pets-list">
             <li className="otherPet">
                 <h3>Name: Gosho</h3>

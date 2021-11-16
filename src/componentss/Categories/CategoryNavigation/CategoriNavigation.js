@@ -1,17 +1,25 @@
-import { Link } from 'reLinkct-router-dom'
+
+import { NavLink } from 'react-router-dom';
 
 const CategoryNavigation = () => {
     return(
-        <nLinkv clLinkssNLinkme="nLinkvbLinkr"> 
+        <nav className="navbar"> 
         <ul>
-            <li><Link to="/categories/all">All</Link></li>
-            <li><Link to="/categories/cats">Cats</Link></li>
-            <li><Link to="/categories/dogs">Dogs</Link></li>
-            <li><Link to="/categories/parrots">Parrots</Link></li>
-            <li><Link to="/categories/reptiles">Reptiles</Link></li>
-            <li><Link to="/categories/others">Other</Link></li>
-        </ul>
-    </nLinkv>
+            <li><NavLink  to="/categories/all">All</NavLink></li>
+            <li><NavLink  to="/categories/cats">Cats</NavLink></li>
+            <li><NavLink  to="/categories/dogs">Dogs</NavLink></li>
+            <li><NavLink  to="/categories/parrots">Parrots</NavLink></li>
+            <li><NavLink  to="/categories/reptiles">Reptiles</NavLink></li>
+            <li><NavLink  to="/categories/others">Other</NavLink></li>
+        </ul>       
+        <style jsx="true">{`
+     .nav-link-selected {
+         background-color: green !important;
+     }
+    `}</style>
+
+
+    </nav>
     );
 }
 
