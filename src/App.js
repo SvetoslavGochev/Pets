@@ -4,6 +4,9 @@ import './App.css';
 import Header  from './componentss/Header/Header';
 import Footer from './componentss/Footer/Footer'
 import style from './componentss/Header/Header.css';
+import { Match } from "react-router";
+
+
 
 import Categories  from './componentss/Categories/Categories';
 
@@ -15,7 +18,7 @@ function App() {
      
     <Routes>
 
-       <Route exact path="/" element={<Categories />}/>
+       <Route  path="/" element={<Categories  />} />
         
        {/* route podava propss match location history */}
       

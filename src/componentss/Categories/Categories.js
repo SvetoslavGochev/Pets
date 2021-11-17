@@ -1,13 +1,27 @@
 import CategoryNavigation from './CategoryNavigation/CategoriNavigation'
 
 // import { useLocation, useMatch } from 'react-router-dom';
-import { Redirect, useHistory, Switch, Route }  from 'react-router-dom';
-
+import { Redirect, useHistory, Switch, Route, }  from 'react-router-dom';
+import { match } from "react-router";
+import { useEffect, useState} from 'react'
+import  { Component } from 'react';
 const Categories = ({
     match,
     location,
     history
 }) => {
+
+   const [pets, setPets] = useState([]);
+
+//     useEffect(() => {
+//   fetch('http://localhost:5000/pets')
+//   .then(res => res.json())
+//   .then(res => setPets(res))
+//     }, []);
+    
+    console.log(pets)
+
+
     console.log(match);
     console.log(location);
     console.log(history);

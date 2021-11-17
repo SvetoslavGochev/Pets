@@ -16,6 +16,7 @@ nav.navbar {
     font-size: 1.5rem;
     color: white;
     
+    
 }
 #site-header > nav > section.navbar-dashboard > form > input[type="text"],
 #site-header > nav > section.navbar-anonymous > ul > li:nth-child(1) > a,
