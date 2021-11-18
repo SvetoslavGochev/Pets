@@ -1,20 +1,26 @@
-const Pet = ({
+const Pet =({
     name,
+    id,
+    imageURL,
+    description,
+    category,
+    likes
 }) => {
 
-    return(
+    return (
         <li className="otherPet">
-          <h3>Name: {name}</h3>
-           <p>Category: Cat</p>
-           <p className="img"><img src="https://pics.clipartpng.com/Cat_PNG_Clip_Art-2580.png"/></p>
-           <p className="description">This is not my cat Gosho</p>
-           <div className="pet-info">
-              <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
-              <a href="#"><button className="button">Details</button></a>
-              <i className="fas fa-heart"></i> <span> 2</span>
-           </div>
-        </li>
+        <h3>Name: {name}</h3>
+        <p>Category: {category}</p>
+        <p className="img"><img src={"s"} /></p>
+        <p className="description">{description}</p>
+        <div className="pet-info">
+           <a href="#"><button className="button"><i className="fas fa-heart"></i> Pet</button></a>
+           <a href="#"><button className="button">Details</button></a>
+           <i className="fas fa-heart"></i> <span> {likes}</span>
+        </div>
+     </li>
     );
 }
- 
 export default Pet;
+
+
