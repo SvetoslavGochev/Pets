@@ -2,7 +2,9 @@ import CategoryNavigation from './CategoryNavigation/CategoriNavigation'
 
 import  { Component } from 'react';
 
-import { Pet } from '../Pet/Pet';
+import  Pet  from '../Pet/Pet';
+
+
 
 class Categories extends  Component {
     constructor(props) {
@@ -30,6 +32,7 @@ class Categories extends  Component {
     
             <CategoryNavigation />
     
+             
             <ul className="other-pets-list">
                 {this.state.pets.map(x => 
                      <Pet
