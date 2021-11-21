@@ -1,6 +1,6 @@
 const Pet =({
-    name,
     id,
+    name,
     imageURL,
     description,
     category,

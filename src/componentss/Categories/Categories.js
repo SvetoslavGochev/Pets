@@ -4,6 +4,7 @@ import  { Component } from 'react';
 
 import  Pet  from '../Pet/Pet';
 
+import * as petsService from '../../Service/PetService'
 
 
 class Categories extends  Component {
@@ -16,15 +17,20 @@ class Categories extends  Component {
     }
 
     componentDidMount() {
+      
+        petsService.getAll()
+        .then(res => this.setState({ pets: res}))
+    }
 
-        fetch('http://localhost:5000/pets')
-        .then(res => res.json())
-        .then(res => this.setState({pets: res}))
-        .catch(err => console.log(err));
+    componentDidUpdate() {
+        
+        // petsService.getAll(this.props.match.params.category)
+        // .then(res => this.setState({ pets: res}))
+        //match nqma
     }
 
     render() {
-        console.log(this.state)
+        
 
         return(
             <section className="dashboard">
