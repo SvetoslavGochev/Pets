@@ -11,4 +11,10 @@ export const getAll = (category = '') => {
         .then(res => res.json())
         .then(res => this.setState({pets: res}))
         
+
+
+}
+
+export const getOne = (petId) => {
+    
 }
