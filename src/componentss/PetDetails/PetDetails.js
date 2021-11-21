@@ -1,0 +1,25 @@
+import { useEffect, useState } from "react";
+
+import petsServise from '../../Service/PetService';
+
+const PetDetails = ({
+    match
+}) => {
+
+    useEffect(() => {
+      petsServise.getOne(match.params.petId)
+    })
+    return(
+        <section class="detailsOtherPet">
+                <h3>Spirit</h3>
+                <p>Pet counter: 7 <a href="#"><button class="button"><i class="fas fa-heart"></i>
+                            Pet</button></a>
+                </p>
+                <p class="img"><img src="http://pngimg.com/uploads/horse/horse_PNG321.png" /></p>
+				<p class="description">This is my horse Spirit</p>
+            </section>
+    );
+};
+
+
+export default PetDetails;
