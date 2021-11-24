@@ -18,8 +18,8 @@ class Categories extends  Component {
 
     componentDidMount() {
       
-        petsService.getAll()
-        .then(res => this.setState({ pets: res}))
+        // petsService.getAll()
+        // .then(res => this.setState({ pets: res}))
     }
 
     componentDidUpdate() {
