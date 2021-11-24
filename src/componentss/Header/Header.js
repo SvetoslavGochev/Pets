@@ -1,44 +1,29 @@
+
+import {Link, NavLink} from 'react-router-dom';
+
+
 const Header = () => {
   return (
     <header id="site-header">
-      <nav class="navbar">
-        <section className="navbar-dashboard">
-          <div className="first-bar">
-            <a href="#">Dashboard</a>
-            <a className="button" href="#">
-              My Pets
-            </a>
-            <a className="button" href="#">
-              Add Pet
-            </a>
-          </div>
-          <div className="second-bar">
-            <ul>
-              <li>Welcome, Pesho!</li>
-              <li>
-                <a href="#">
-                  <i className="fas fa-sign-out-alt"></i> Logout
-                </a>
-              </li>
-            </ul>
-          </div>
+ 
+    <nav class="navbar">
+        <section class="navbar-dashboard">
+            <Link to="/">Dashboard</Link>
+            
+            <div id="guest">
+                <Link to="/login" class="button" >Login</Link>
+                <Link  to="/register" class="button" >Registers</Link>
+            </div>
+           
+            <div id="user">
+                <span>Welcome, Peter</span>
+                <Link to="/my-pets"  class="button" >My Pets</Link>
+                <Link to="/add-pet"  class="button" >Add Pet</Link>
+                <Link to="/logout"  class="button" >Logout</Link>
+            </div>
         </section>
-        <section className="navbar-anonymous">
-          <ul>
-            <li>
-              <a href="#">
-                <i className="fas fa-user-plus"></i> Register
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-sign-in-alt"></i> Login
-              </a>
-            </li>
-          </ul>
-        </section>
-      </nav>
-    </header>
+    </nav>
+</header>
   );
 };
 

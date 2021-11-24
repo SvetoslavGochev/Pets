@@ -1,7 +1,12 @@
 const Login = () => {
+    const onLogin = (e) => { 
+        e.preventDefault();
+    }
+
+
     return(
         <section id="login-page" class="login">
-            <form id="login-form" action="" method="">
+            <form id="login-form" onSubmit={onLogin}>
                 <fieldset>
                     <legend>Login Form</legend>
                     <p class="field">

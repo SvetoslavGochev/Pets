@@ -1,31 +1,32 @@
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./componentss/Header/Header";
+import Footer from "./componentss/Footer/Footer";
 
-import { Route , Routes} from 'react-router-dom';
-import './App.css';
-import Header  from './componentss/Header/Header';
-import Footer from './componentss/Footer/Footer'
-import style from './componentss/Header/Header.css';
-import { Match } from "react-router";
+import Dashboard from './componentss/Dashboard/Dashboard'
+import Login from './componentss/Login/login';
+import Register from './componentss/Register/register';
+import MyPets from './componentss/MyPets/mypets';
+import Create from './componentss/Create/create';
 
-
-
-import Categories  from './componentss/Categories/Categories';
+import Categories from "./componentss/Categories/Categories";
 
 //switch kato machne edin rout i da spre
 function App() {
   return (
     <div className="container">
-     <Header />
-     
-    <Routes>
+      <Header />
+      <main id="site-content">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/my-pets" element={<MyPets />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </main>
 
-       <Route  path="/" element={<Categories  />} />
-        
-       {/* route podava propss match location history */}
-      
-       </Routes>
-    
-
-     <Footer />
+      <Footer />
     </div>
   );
 }
