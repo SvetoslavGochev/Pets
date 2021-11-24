@@ -1,3 +1,8 @@
+import * as authServise from '../../Service/authService'
+
+
+
+
 const Login = () => {
     const onLogin = (e) => { 
         e.preventDefault();
@@ -5,8 +10,10 @@ const Login = () => {
         let formData = new FormData(e.currentTarget);
         
         let email = formData.get('email');
-    // vzima napisanoto v ;oleto email
-        console.log(formData.get('email'))
+      // vzima napisanoto v ;oleto email
+        console.log(formData.get('email'));
+
+        authServise.login(email)
 
     }
 
