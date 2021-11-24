@@ -1,6 +1,13 @@
 const Login = () => {
     const onLogin = (e) => { 
         e.preventDefault();
+
+        let formData = new FormData(e.currentTarget);
+        
+        let email = formData.get('email');
+    // vzima napisanoto v ;oleto email
+        console.log(formData.get('email'))
+
     }
 
 
