@@ -1,9 +1,15 @@
+
+import { useNavigate } from 'react-router-dom';
+
 import * as authServise from '../../Service/authService'
 
 
 
 
 const Login = () => {
+    
+    const navigate = useNavigate();
+
     const onLogin = (e) => { 
         e.preventDefault();
 
@@ -13,7 +19,9 @@ const Login = () => {
       // vzima napisanoto v ;oleto email
         console.log(formData.get('email'));
 
-        authServise.login(email)
+        authServise.login(email);
+
+        navigate('/');
 
     }
 
