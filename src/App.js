@@ -8,14 +8,28 @@ import Login from './componentss/Login/login';
 import Register from './componentss/Register/register';
 import MyPets from './componentss/MyPets/mypets';
 import Create from './componentss/Create/create';
+import { useState, useEffect } from 'react';
+import * as authService from './Service/authService'
 
 import Categories from "./componentss/Categories/Categories";
 
 //switch kato machne edin rout i da spre
 function App() {
+
+  const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
+
+  useEffect(() => {
+   let user = authService.getUser();
+
+   setUserInfo({
+     isAuthenticated: Boolean(user),
+     user: user,
+   })
+  }, []);
+
   return (
     <div className="container">
-      <Header />
+      <Header {...userInfo}/>
       <main id="site-content">
         <Routes>
           <Route path="/" element={<Dashboard />} />

@@ -2,7 +2,14 @@
 import {Link, NavLink} from 'react-router-dom';
 
 
-const Header = () => {
+const Header = ({
+    isAuthenticated,
+    username
+}) => {
+
+l
+
+
   return (
     <header id="site-header">
  
@@ -16,9 +23,9 @@ const Header = () => {
             </div>
            
             <div id="user">
-                <span>Welcome, Peter</span>
+                <span>Welcome, {username}</span>
                 <Link to="/my-pets"  class="button" >My Pets</Link>
-                <Link to="/add-pet"  class="button" >Add Pet</Link>
+                <Link to="/create"  class="button" >Add Pet</Link>
                 <Link to="/logout"  class="button" >Logout</Link>
             </div>
         </section>
