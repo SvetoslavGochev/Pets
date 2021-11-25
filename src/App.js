@@ -23,9 +23,17 @@ function App() {
 
    setUserInfo({
      isAuthenticated: Boolean(user),
-     user: user,
+     user,
    })
   }, []);
+
+  const onLogin = (user) => {
+    setUserInfo({
+      isAuthenticated: Boolean(user),
+      user: user,
+    })
+
+  };
 
   return (
     <div className="container">
@@ -33,7 +41,7 @@ function App() {
       <main id="site-content">
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login onLogin = {onLogin}/>} />
           <Route path="/my-pets" element={<MyPets />} />
           <Route path="/register" element={<Register />} />
           <Route path="/create" element={<Create />} />

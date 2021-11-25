@@ -6,11 +6,13 @@ import * as authServise from '../../Service/authService'
 
 
 
-const Login = () => {
+const Login = ({
+    onLogin
+}) => {
     
     const navigate = useNavigate();
 
-    const onLogin = (e) => { 
+    const onLoginHendlar = (e) => { 
         e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
@@ -20,7 +22,7 @@ const Login = () => {
         console.log(formData.get('email'));
 
         authServise.login(email);
-
+        onLogin(email);
         navigate('/');
 
     }
@@ -28,7 +30,7 @@ const Login = () => {
 
     return(
         <section id="login-page" class="login">
-            <form id="login-form" onSubmit={onLogin}>
+            <form id="login-form" onSubmit={onLoginHendlar}>
                 <fieldset>
                     <legend>Login Form</legend>
                     <p class="field">
