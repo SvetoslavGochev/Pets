@@ -30,7 +30,7 @@ const Login = ({
 
     return(
         <section id="login-page" class="login">
-            <form id="login-form" onSubmit={onLoginHendlar}>
+            <form id="login-form" onSubmit={onLoginHendlar} method="POST">
                 <fieldset>
                     <legend>Login Form</legend>
                     <p class="field">
