@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { Route } from 'react-router-dom';
 import OtherPet from "./OtherPet/otherPet";
 
 import * as petService from '../../Service/PetService'
@@ -22,6 +23,13 @@ const Dashboard = () => {
         <section id="dashboard-page" class="dashboard">
         <h1>Dashboard</h1>
         
+      <nav>
+            <Route path="all" />
+
+            
+      </nav>
+
+
         <ul class="other-pets-list">
           { pets.map(x => <OtherPet key={x._id} pet={x} />)}
         </ul>
