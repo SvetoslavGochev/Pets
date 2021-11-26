@@ -3,11 +3,11 @@ const OtherPet = ({
 }) => {
 
     return(
-        <li class="otherPet">
+        <li className="otherPet">
         <h3>Name: {pet.name}</h3>
         <p>Type: {pet.type}</p>
-        <p class="img"><img src={pet.imageUrl} /></p>
-        <a class="button" href="#">Details</a>
+        <p className="img"><img src={pet.imageUrl} /></p>
+        <a className="button" href="#">Details</a>
     </li>
     );
 

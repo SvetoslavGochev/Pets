@@ -40,7 +40,7 @@ function App() {
       <Header {...userInfo}/>
       <main id="site-content">
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/login" element={<Login onLogin = {onLogin}/>} />
           <Route path="/my-pets" element={<MyPets />} />
           <Route path="/register" element={<Register />} />

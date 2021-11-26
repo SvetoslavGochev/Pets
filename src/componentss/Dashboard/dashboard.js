@@ -1,42 +1,29 @@
-import { useEffect, useState } from "react";
 
-import { Route } from 'react-router-dom';
-import OtherPet from "./OtherPet/otherPet";
+import { Route, Routes , Link} from "react-router-dom";
 
-import * as petService from '../../Service/PetService'
+import PetList2 from "../PetList2/PetList2";
+
 
 const Dashboard = () => {
+  return (
+    <section id="dashboard-page" className="dashboard">
+      <h1>Dashboard</h1>
 
-    const [pets, setPets] = useState([]);
-
-    useEffect(() => {
-        petService.getAll()
-        .then(result => {
-
-          console.log(result)
-            setPets(result);
-        })
-    }, [])
-
-
-    return(
-        <section id="dashboard-page" class="dashboard">
-        <h1>Dashboard</h1>
-        
       <nav>
-            <Route path="all" />
-
-            
+        <Link to="types">Types</Link>
       </nav>
 
+       <section>
+        <Routes>
+          <Route path="/"  element={<PetList2 />}/>
+          <Route path="/types"  element={<><p>Types ...</p></> } />
 
-        <ul class="other-pets-list">
-          { pets.map(x => <OtherPet key={x._id} pet={x} />)}
-        </ul>
+        </Routes>
 
-        <p class="no-pets">No pets in database!</p>
+       </section>
+
     </section>
-    );
-}
+  );
+};
 
 export default Dashboard;

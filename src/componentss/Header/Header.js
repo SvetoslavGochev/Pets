@@ -33,7 +33,7 @@ const Header = ({
     <header id="site-header">
       <nav class="navbar">
         <section class="navbar-dashboard">
-          <Link to="/">Dashboard</Link>
+          <Link to="/dashboard">Dashboard</Link>
 
           {isAuthenticated 
               ? userNavigation
