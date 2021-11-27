@@ -7,7 +7,7 @@ import Dashboard from './componentss/Dashboard/Dashboard'
 import Login from './componentss/Login/login';
 import Register from './componentss/Register/register';
 import MyPets from './componentss/MyPets/mypets';
-import Create from './componentss/Create/create';
+import Create from './componentss/Create/Create';
 import { useState, useEffect } from 'react';
 import * as authService from './Service/authService'
 
