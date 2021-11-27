@@ -5,6 +5,7 @@ import Footer from "./componentss/Footer/Footer";
 
 import Dashboard from './componentss/Dashboard/Dashboard'
 import Login from './componentss/Login/login';
+
 import Register from './componentss/Register/register';
 import MyPets from './componentss/MyPets/mypets';
 import Create from './componentss/Create/Create';
@@ -12,6 +13,7 @@ import { useState, useEffect } from 'react';
 import * as authService from './Service/authService'
 
 import Categories from "./componentss/Categories/Categories";
+import Details from "./componentss/Details/Details";
 
 //switch kato machne edin rout i da spre
 function App() {
@@ -42,9 +44,10 @@ function App() {
         <Routes>
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/login" element={<Login onLogin = {onLogin}/>} />
-          <Route path="/my-pets" element={<MyPets />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/my-pets" element={<MyPets />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/details/:petId" element={<Details />} />
         </Routes>
       </main>
 
