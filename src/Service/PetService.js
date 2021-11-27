@@ -1,4 +1,3 @@
-
 const baseUrl = "https://softuni-custom-servet.herokuapp.com/jsonstore";
 
 export const getAll = async () => {
