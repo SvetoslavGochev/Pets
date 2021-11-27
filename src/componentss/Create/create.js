@@ -14,7 +14,7 @@ const OnPetCreate = (e) => {
     let imgUrl = formData.get('imgUrl');
     let type = formData.get('type');
 
-    petService.Create({
+    petService.create({
         name, 
         description,
          imgUrl,
