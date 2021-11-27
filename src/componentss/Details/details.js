@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
 import * as petService from '../../Service/PetService';
-import {useState, useEfect} from 'react-router-dom'
+
+import { useEffect, useState } from "react"; 
 
 const Details = () => {
-    const [pet, setPet] = useState();
+    const [pet, setPet] = useState({});
 
-    const { petId } =useParams();
+    let { petId } =useParams();
 
-    useEfect(async () => {
+    useEffect(async () => {
+    
+
         let petResult = await petService.getOne(petId);
 
-       setPet(petResult);
+       setPet( petResult);
+    
     }, [])
 
     let params = useParams();
