@@ -11,9 +11,11 @@ import MyPets from './componentss/MyPets/mypets';
 import Create from './componentss/Create/Create';
 import { useState, useEffect } from 'react';
 import * as authService from './Service/authService'
-import { Logout } from './componentss/Logout/Logout'
+
 import Categories from "./componentss/Categories/Categories";
 import Details from "./componentss/Details/Details";
+
+import Logout from "./componentss/Logout/Logout";
 
 //switch kato machne edin rout i da spre
 function App() {
@@ -52,7 +54,7 @@ function App() {
         <Routes>
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/login" element={<Login onLogin = {onLogin}/>} />
-          <Route path="/logout" element={<Logout onLogin = {onLogout}/>} />
+          <Route path="/logout" element={<Logout onLogout = {onLogout}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/my-pets" element={<MyPets />} />
           <Route path="/create" element={<Create />} />

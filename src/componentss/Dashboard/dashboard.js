@@ -3,6 +3,7 @@ import { Route, Routes , Link} from "react-router-dom";
 
 import PetList2 from "../PetList2/PetList2";
 
+import logo from '../../logo.svg'
 
 const Dashboard = () => {
   return (
@@ -21,7 +22,8 @@ const Dashboard = () => {
         </Routes>
 
        </section>
-
+          
+          <img src={logo} title="asd" alt="asd" />
     </section>
   );
 };
