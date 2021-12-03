@@ -1,8 +1,15 @@
+import { useContext } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+import { AuthContext } from "../../context/AuthContext";
 
 import * as authServise from "../../Service/authService";
 
-const Login = ({ onLogin }) => {
+const Login = () => {
+   
+  const { login } =useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const onLoginHendlar = (e) => {
@@ -15,20 +22,18 @@ const Login = ({ onLogin }) => {
     let password = formData.get("password");
     // vzima napisanoto v ;oleto email
     console.log(formData.get("email"));
-    console.log('asdasd');
+    console.log("asdasd");
 
-    authServise.login(email, password)
-         .then((authData) => {
- 
-             onLogin(authData);
-             
-             navigate('/');
-         })
-         .catch(err => {
-          console.log(err);
-         })
+    authServise
+      .login(email, password)
+      .then((authData) => {
+        login(authData);
 
-
+        navigate("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
