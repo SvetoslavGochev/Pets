@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./componentss/Header/Header";
 import Footer from "./componentss/Footer/Footer";
 
+import { AuthContext } from './context/AuthContext'
 
 import Login from './componentss/Login/login';
 
@@ -21,19 +22,24 @@ import Logout from "./componentss/Logout/Logout";
 
 //switch kato machne edin rout i da spre
 function App() {
+  const [user, setUser] = useState({
+    _id: '',
+    email: '',
+    accessToken: '',
+  });
 
   const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
   
 
   useEffect(() => {
-   let user = authService.getUser();
+     let user = authService.getUser();
 
 
   }, []);
 
-  const onLogin = (username) => {
+  const onLogin = (authData) => {
     
- 
+        setUser(authData);
 
   };
 
@@ -43,8 +49,12 @@ function App() {
   }
 
   return (
+
+    <AuthContext.Provider value={true}>
+
     <div className="container">
-      <Header {...userInfo}/>
+      <Header email={user.email}/>
+      {/* <Header _id={user.id} .../> */}
       <main id="site-content">
         <Routes>
           <Route path="/dashboard/*" element={<Dashboard />} />
@@ -59,6 +69,7 @@ function App() {
 
       <Footer />
     </div>
+    </AuthContext.Provider>
   );
 }
 

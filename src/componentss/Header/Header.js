@@ -1,9 +1,8 @@
 import { Link, NavLink } from "react-router-dom";
 
 const Header = ({
-     isAuthenticated,
-      user
-     }) => {
+  email
+}) => {
   let questNavigation = (
     <div id="guest">
       <Link to="/login" class="button">
@@ -16,7 +15,7 @@ const Header = ({
   );
   let userNavigation = (
     <div id="user">
-    <span>Welcome, {user}</span>
+    <span>Welcome, {email} </span>
     <Link to="/my-pets" class="button">
       My Pets
     </Link>
@@ -35,10 +34,12 @@ const Header = ({
         <section class="navbar-dashboard">
           <Link to="/dashboard">Dashboard</Link>
 
-          {isAuthenticated 
-              ? userNavigation
-              : questNavigation
-              }
+          {email 
+          ? userNavigation
+           :questNavigation}
+
+          
+              
 
         </section>
       </nav>
