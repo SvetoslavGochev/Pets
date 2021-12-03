@@ -1,5 +1,13 @@
-export const login = (username) => {
-    localStorage.setItem('username', username);
+export const login = (email, password) => {
+  return  fetch('http://localhost:3030/users/login',{
+        method: 'POST',
+        headers:{
+            'content-type': 'aplication/json'
+        },
+        body: JSON.stringify({email, password} )
+
+    })
+      .then(res => res.json())
 };
 
 export const logout = () => {

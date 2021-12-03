@@ -3,8 +3,10 @@ import "./App.css";
 import Header from "./componentss/Header/Header";
 import Footer from "./componentss/Footer/Footer";
 
-import Dashboard from './componentss/Dashboard/Dashboard'
+
 import Login from './componentss/Login/login';
+
+import Dashboard from "./componentss/Dashboard/Dashboard";
 
 import Register from './componentss/Register/register';
 import MyPets from './componentss/MyPets/mypets';
