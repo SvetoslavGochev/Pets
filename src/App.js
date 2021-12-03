@@ -23,30 +23,23 @@ import Logout from "./componentss/Logout/Logout";
 function App() {
 
   const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
+  
 
   useEffect(() => {
    let user = authService.getUser();
 
-   setUserInfo({
-     isAuthenticated: Boolean(user),
-     user,
-   })
+
   }, []);
 
   const onLogin = (username) => {
-    setUserInfo({
-      isAuthenticated: true,
-      user: username,
-    });
+    
+ 
 
   };
 
 
   const onLogout = () => {
-    setUserInfo({
-      isAuthenticated: false,
-      user: "",
-    });
+   
   }
 
   return (

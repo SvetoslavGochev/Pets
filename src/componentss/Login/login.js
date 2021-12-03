@@ -19,13 +19,16 @@ const Login = ({ onLogin }) => {
 
     authServise.login(email, password)
          .then((authData) => {
-             console.log('logged');
-             console.log(authData);
+ 
+             onLogin(authData);
+             
+             navigate('/');
+         })
+         .catch(err => {
+          console.log(err);
          })
 
 
-    onLogin(email);
-    navigate("/");
   };
 
   return (
