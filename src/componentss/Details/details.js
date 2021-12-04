@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import * as petService from '../../Service/PetService';
 
 import { useEffect, useState, useContext } from "react"; 
@@ -6,6 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Details = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [pet, setPet] = useState({});
     const { petId } = useParams();
@@ -13,15 +14,28 @@ const Details = () => {
     useEffect(async () => {
     
         let petResult = await petService.getOne(petId);
-
-       setPet( petResult);
-    
+        setPet( petResult);
+      
     }, []);
 
-    const ownerButtons = ( <>
-        <a className="button" href="#">Edit</a>
-        <a className="button" href="#">Delete</a>
-       </>);
+  const  deleteHandler = (e) => {
+      e.preventDefault();
+      
+      petService.remouve(petId)
+      .then(() => {
+         navigate('/dashboard');
+      })
+    };
+    const   editHandler = () => {
+   
+    };
+
+    const ownerButtons = (
+       <>
+         <button className="button" href="#" onClick={editHandler} >Edit</button>
+         <button className="button" href="#" onClick={deleteHandler} >Delete</button>
+       </>
+       );
 
        const userButtons = <a className="button" href="#">Like</a>;
 

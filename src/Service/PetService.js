@@ -11,6 +11,17 @@ export const getAll = async () => {
   return result;
 };
 
+export const remouve = (petId, token) => {
+  return fetch(`${baseUrl}/pets/${petId}`,{
+     method: 'DELETE',
+     headers: {
+       'X-Authorization': token
+     }
+   })
+  .then((res) => res.json());
+
+}
+
 export const create = async (petData, token) => {
   let response = await fetch(`${baseUrl}/pets`, {
     method: 'POST',

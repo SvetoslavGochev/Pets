@@ -20,10 +20,21 @@ export const login = async (email, password) => {
     if(res.ok){
         return jsonResult;
     } else {
-        throw jsonResult
+        throw jsonResult;
     }
   
 };
+
+export const register = (email, password) => {
+   return fetch(`${baseUrl}/users/register`,{
+        method:'POST',
+        headers:{
+            'content-type': 'aplication/json'
+        },
+        body: JSON.stringify({email, password})
+    })
+    .then(res => res.json());
+}
 
 export const logout = () => {
     fetch(`${baseUrl}/users/loguot`)
