@@ -48,7 +48,7 @@ function App() {
 
   return (
 
-    <AuthContext.Provider value={user,login}>
+    <AuthContext.Provider value={{user,login}}>
 
     <div className="container">
       <Header email={user.email}/>
