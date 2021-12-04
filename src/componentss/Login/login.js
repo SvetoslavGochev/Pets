@@ -8,7 +8,7 @@ import * as authServise from "../../Service/authService";
 
 const Login = () => {
    
-  const { login } =useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 

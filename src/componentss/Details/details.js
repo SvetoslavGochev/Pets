@@ -1,30 +1,29 @@
 import { useParams } from "react-router-dom";
 import * as petService from '../../Service/PetService';
 
-import { useEffect, useState } from "react"; 
+import { useEffect, useState, useContext } from "react"; 
+
+import { AuthContext } from "../../context/AuthContext";
 
 const Details = () => {
+    const { user } = useContext(AuthContext);
     const [pet, setPet] = useState({});
-
-    let { petId } =useParams();
+    const { petId } = useParams();
 
     useEffect(async () => {
     
-
         let petResult = await petService.getOne(petId);
 
        setPet( petResult);
     
-    }, [])
+    }, []);
 
-    let params = useParams();
+    const ownerButtons = ( <>
+        <a className="button" href="#">Edit</a>
+        <a className="button" href="#">Delete</a>
+       </>);
 
-    petService.getOne(petId)
-    .then(result => {
-
-    })
-
-    console.log(params)
+       const userButtons = <a className="button" href="#">Like</a>;
 
      return(
         <section id="details-page" className="details">
@@ -33,16 +32,16 @@ const Details = () => {
             <p className="type">Type: {pet.type}</p>
             <p className="img"><img src={pet.imageUrl}/></p>
             <div className="actions">
-                
-                <a className="button" href="#">Edit</a>
-                <a className="button" href="#">Delete</a>
-                
-                
-                <a className="button" href="#">Like</a>
+
+             
+                {user._id && (user._id == pet._ownerId
+                ? ownerButtons
+                : userButtons
+                )}
                 
                
                 <div className="likes">
-                    <img className="hearts" src="/images/heart.png" />
+                    <img className="hearts" src="/images/heart.png" alt="sd"/>
                     <span id="total-likes">Likes: {pet.likes}</span>
                 </div>
                 

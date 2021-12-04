@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-import *as authService from '../../Service/authService';
+import * as authService from '../../Service/authService';
 
 
 const Logout = ({
