@@ -42,7 +42,7 @@ const Details = () => {
                
                 <div className="likes">
                     <img className="hearts" src="/images/heart.png" alt="sd"/>
-                    <span id="total-likes">Likes: {pet.likes}</span>
+                    <span id="total-likes">Likes: {pet.likes?.length}</span>
                 </div>
                 
             </div>
