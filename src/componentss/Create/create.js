@@ -2,8 +2,14 @@ import * as petService from "../../Service/PetService";
 
 import { useNavigate } from "react-router-dom";
 
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 const Create = () => {
+
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
+
 
   const OnPetCreate = (e) => {
     e.preventDefault();
@@ -21,7 +27,7 @@ const Create = () => {
         description,
         imageUrl,
         type,
-      })
+      }, user.accessToken)
       .then((result) => {
         navigate("/dasboard");
       });
@@ -41,23 +47,14 @@ const Create = () => {
           <p className="field">
             <label for="description">Description</label>
             <span className="input">
-              <textarea
-                name="description"
-                id="description"
-                placeholder="Description"
-              ></textarea>
+              <textarea name="description" id="description" placeholder="Description"></textarea>
             </span>
           </p>
           <p className="field">
             <label for="image">Image</label>
             <span className="input">
               <input
-                type="text"
-                name="imageUrl"
-                id="image"
-                placeholder="Image"
-              />
-            </span>
+                type="text" name="imageUrl" id="image"  placeholder="Image"/></span>
           </p>
           <p className="field">
             <label for="type">Type</label>
