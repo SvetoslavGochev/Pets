@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./componentss/Header/Header";
 import Footer from "./componentss/Footer/Footer";
 
+import useLocalStorage, {} from './hooks/useLocalSorage'
+
 import { AuthContext } from './context/AuthContext'
 
 import Login from './componentss/Login/login';
@@ -22,7 +24,7 @@ import Logout from "./componentss/Logout/Logout";
 
 //switch kato machne edin rout i da spre
 function App() {
-  const [user, setUser] = useState({
+  const [user, setUser] = useLocalStorage({
     _id: '',
     email: '',
     accessToken: '',

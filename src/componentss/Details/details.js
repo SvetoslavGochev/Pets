@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,Link } from "react-router-dom";
 import * as petService from '../../Service/PetService';
 
 import { useEffect, useState, useContext } from "react"; 
@@ -11,17 +11,19 @@ const Details = () => {
     const [pet, setPet] = useState({});
     const { petId } = useParams();
 
-    useEffect(async () => {
+    useEffect( () => {
     
-        let petResult = await petService.getOne(petId);
-        setPet( petResult);
+        petService.getOne(petId)
+           .then(petResult =>{
+               setPet( petResult);
+           } )
       
-    }, []);
+    }, [petId]);
 
   const  deleteHandler = (e) => {
       e.preventDefault();
       
-      petService.remouve(petId)
+      petService.remouve(petId, user.accessToken)
       .then(() => {
          navigate('/dashboard');
       })
@@ -32,8 +34,8 @@ const Details = () => {
 
     const ownerButtons = (
        <>
-         <button className="button" href="#" onClick={editHandler} >Edit</button>
-         <button className="button" href="#" onClick={deleteHandler} >Delete</button>
+         <Link className="button" to="/edit" onClick={editHandler} >Edit</Link>
+         <a className="button" href="#" onClick={deleteHandler} >Delete</a>
        </>
        );
 
