@@ -36,8 +36,12 @@ export const register = (email, password) => {
     .then(res => res.json());
 }
 
-export const logout = () => {
-    fetch(`${baseUrl}/users/loguot`)
+export const logout = (token) => {
+   return fetch(`${baseUrl}/users/loguot`,{
+       headers:{
+           'X-Authorization': token,
+       }
+   })
 }
 
 export const getUser = () => {

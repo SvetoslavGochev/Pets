@@ -23,12 +23,15 @@ import Details from "./componentss/Details/Details";
 import Logout from "./componentss/Logout/Logout";
 
 //switch kato machne edin rout i da spre
+const initialAuthState = {
+  _id: '',
+  email: '',
+  accessToken: '',
+}
+
+
 function App() {
-  const [user, setUser] = useLocalStorage({
-    _id: '',
-    email: '',
-    accessToken: '',
-  });
+  const [user, setUser] = useLocalStorage('user', initialAuthState);
 
   const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
   
@@ -44,13 +47,13 @@ function App() {
   };
 
 
-  const onLogout = () => {
-   
+  const logout = () => {
+   setUser(initialAuthState);
   }
 
   return (
 
-    <AuthContext.Provider value={{user,login}}>
+    <AuthContext.Provider value={{user,login, logout}}>
 
     <div className="container">
       <Header email={user.email}/>
