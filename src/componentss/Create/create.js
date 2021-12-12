@@ -3,11 +3,11 @@ import * as petService from "../../Service/PetService";
 import { useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext, useAuthContext } from "../../context/AuthContext";
 
 const Create = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user } = useAuthContext();
   const navigate = useNavigate();
 
 

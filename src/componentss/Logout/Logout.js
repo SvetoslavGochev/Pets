@@ -1,15 +1,15 @@
 import { Navigate, useNavigate } from "react-router-dom";
 
 import * as authService from '../../Service/authService';
-import { AuthContext } from "../../context/AuthContext";
-import { useContext, useEffect } from "react";
 
+import {  useEffect } from "react";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Logout = () =>  {
  
     const navigate = useNavigate();
 
-    const {user, logout} = useContext(AuthContext);
+    const {user, logout} = useAuthContext();
 
     useEffect(() => {
 

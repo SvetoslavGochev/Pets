@@ -3,9 +3,9 @@ import "./App.css";
 import Header from "./componentss/Header/Header";
 import Footer from "./componentss/Footer/Footer";
 
-import useLocalStorage, {} from './hooks/useLocalSorage'
+import { AuthProvider } from "./context/AuthContext";
 
-import { AuthContext } from './context/AuthContext'
+
 
 import Login from './componentss/Login/login';
 
@@ -23,17 +23,12 @@ import Details from "./componentss/Details/Details";
 import Logout from "./componentss/Logout/Logout";
 
 //switch kato machne edin rout i da spre
-const initialAuthState = {
-  _id: '',
-  email: '',
-  accessToken: '',
-}
 
 
 function App() {
-  const [user, setUser] = useLocalStorage('user', initialAuthState);
+  
 
-  const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
+  // const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
   
 
   useEffect(() => {
@@ -42,21 +37,14 @@ function App() {
 
   }, []);
 
-  const login = (authData) => {  
-        setUser(authData);
-  };
-
-
-  const logout = () => {
-   setUser(initialAuthState);
-  }
+  
 
   return (
 
-    <AuthContext.Provider value={{user,login, logout}}>
-
+   
+<AuthProvider>
     <div className="container">
-      <Header email={user.email}/>
+      <Header />
 
       <main id="site-content">
         <Routes>
@@ -72,7 +60,8 @@ function App() {
 
       <Footer />
     </div>
-    </AuthContext.Provider>
+</AuthProvider>
+  
   );
 }
 

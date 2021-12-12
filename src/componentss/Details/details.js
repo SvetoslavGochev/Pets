@@ -3,11 +3,11 @@ import * as petService from '../../Service/PetService';
 
 import { useEffect, useState, useContext } from "react"; 
 
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext, useAuthContext } from "../../context/AuthContext";
 
 const Details = () => {
     const navigate = useNavigate();
-    const { user } = useContext(AuthContext);
+    const { user } = useAuthContext();
     const [pet, setPet] = useState({});
     const { petId } = useParams();
 

@@ -16,18 +16,18 @@ const useLocalStorage = (key, initialValue) => {
         } catch(err) {
             console.log(err);
             return initialValue;
-        }
+        };
     
            
         });
 
         const setItem = (value) =>{
-             try{
+             try {
                  localStorage.setItem(key, JSON.stringify(value));
                   setState(value);
-             }catch(err) {
+             } catch(err) {
 
-             }
+             };
 
         }
     return [

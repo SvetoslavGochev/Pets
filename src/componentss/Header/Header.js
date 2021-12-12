@@ -1,11 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { AuthContext } from "../../context/AuthContext";
+import {  useAuthContext } from "../../context/AuthContext";
 
 import { useContext } from "react";
 
 const Header = () => {
-   const { user } = useContext(AuthContext);
+   const { user } = useAuthContext();
 
   let questNavigation = (
     <div id="guest">
