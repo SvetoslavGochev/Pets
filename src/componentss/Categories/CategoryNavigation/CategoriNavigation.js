@@ -9,7 +9,7 @@ const CategoryNavigation = () => {
             <li><NavLink  to="/categories/cats" >Cats</NavLink></li>
             <li><NavLink  to="/categories/dogs">Dogs</NavLink></li>
             <li><NavLink  to="/categories/parrots" >Parrots</NavLink></li>
-            <li><NavLink  to="/categories/reptiles" >Reptiles</NavLink></li>
+            <li><NavLink  to="/categories/reptiles" >Reptiles1</NavLink></li>
             <li><NavLink  to="/categories/others" >Other</NavLink></li>
         </ul>       
         <style jsx>{`
