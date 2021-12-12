@@ -1,15 +1,14 @@
 // const baseUrl = "https://softuni-custom-servet.herokuapp.com/jsonstore";
+
+import { request } from "./requester";
+
  const baseUrl = 'http://localhost:3030/data';
 
-export const getAll = async () => {
-  let response = await fetch(`${baseUrl}/pets`);
+export const getAll = () => request(`${baseUrl}/pets`);
 
-  let pets = await response.json();
+  
 
-  let result = Object.values(pets);
 
-  return result;
-};
 
 export const remouve = (petId, token) => {
   return fetch(`${baseUrl}/pets/${petId}`,{

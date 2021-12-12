@@ -1,9 +1,10 @@
 
-import { Route, Routes , Link} from "react-router-dom";
+import { Link} from "react-router-dom";
+
 
 import PetList2 from "../PetList2/PetList2";
 
-import {ReactComponent as Logo} from '../../logo.svg'
+// import {ReactComponent as Logo} from '../../logo.svg'
 
 const Dashboard = () => {
   return (
@@ -15,16 +16,9 @@ const Dashboard = () => {
       </nav>
 
        <section>
-        <Routes>
-          <Route path="/"  element={<PetList2 />}/>
-          {/* <Route path="/types"  element={<><p>Types ...</p></> } /> */}
-
-        </Routes>
-
+         <PetList2 />
        </section>
-          
-          {/* <img src={logo} title="asd" alt="asd" /> */}
-          <Logo className="logo" />
+           
     </section>
   );
 };

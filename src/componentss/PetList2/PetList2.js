@@ -9,7 +9,10 @@ const PetList2 = () => {
     petService.getAll().then((result) => {
       console.log(result);
       setPets(result);
-    });
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }, []);
 
   return (
