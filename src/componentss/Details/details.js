@@ -4,6 +4,7 @@ import * as petService from '../../Service/PetService';
 import { useEffect, useState, useContext } from "react"; 
 
 import { AuthContext, useAuthContext } from "../../context/AuthContext";
+import { ConfirmDialog} from '../Common/ConfirmDialog'
 
 const Details = () => {
     const navigate = useNavigate();
@@ -20,22 +21,27 @@ const Details = () => {
       
     }, [petId]);
 
-  const  deleteHandler = (e) => {
+  const deleteHandler = (e) => {
       e.preventDefault();
-      
+      console.log("Aleta Ocean");
       petService.remouve(petId, user.accessToken)
       .then(() => {
          navigate('/dashboard');
       })
     };
-    const   editHandler = () => {
+    const editHandler = () => {
    
     };
 
+    const deleteClickHandler = (e) => {
+        console.log("Aleta Ocean2")
+        e.preventDefault();
+    }
+
     const ownerButtons = (
        <>
-         <Link className="button" to="/edit" onClick={editHandler} >Edit</Link>
-         <a className="button" href="#" onClick={deleteHandler} >Delete</a>
+         <Link className="button" to="/edit" onClick={editHandler}>Edit</Link>
+         <a className="button" href="#" onClick={deleteHandler}>Delete</a>
        </>
        );
 
